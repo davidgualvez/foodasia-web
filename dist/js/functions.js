@@ -8,8 +8,8 @@ $(document).idle({
    if(isLogin()){
       
       $.notify({
-          title: '<strong>Due to inactivity</strong>',
-          message: "we've logged you out."
+          title: '<strong>Due to inactivity for 10min</strong>',
+          message: "We've logged you out."
         },{
           type: 'success',
           newest_on_top: true,
@@ -38,8 +38,9 @@ $(document).idle({
                         y: 20
                       }
                   }); 
-                  setTimeout(function() {
-                    eraseAllCookie();
+
+                  eraseAllCookie();
+                  setTimeout(function() { 
                     window.location.href="index.html";
                   }, 1000);
                 } 
