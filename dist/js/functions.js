@@ -1,5 +1,6 @@
 $(document).ready(function(){
     yearNow();
+    connectionChecker();
 }); 
 
 $(document).idle({
@@ -58,6 +59,33 @@ $(document).idle({
   //idle: 60000
 });
 
+function connectionChecker(){
+    Offline.options = {
+        // checks: {
+        //     xhr: {
+        //         url: 'http://119.93.132.226:8000'
+        //     }
+        // },
+        // to check the connection status immediatly on page load.
+        checkOnLoad: true,
+        // to monitor AJAX requests to check connection.
+        interceptRequests: true,
+        // to automatically retest periodically when the connection is down (set to false to disable).
+        reconnect: {
+            // delay time in seconds to wait before rechecking.
+            initialDelay: 5,
+            // wait time in seconds between retries.
+            delay: 5
+        },
+        // to store and attempt to remake requests which failed while the connection was down.
+        requests: true
+    };
+    // 
+    setInterval(function () {
+        Offline.check();
+        //console.log(Offline.state);
+    }, 3000);
+}
 
 // function ajax(url,callback){
 //     Pace.track(function(){
@@ -87,6 +115,7 @@ $(document).idle({
 
 function ajax(url,request,callback){
    // Pace.track(function(){
+    if (Offline.state == 'up'){
        $.ajax({
            url: url,
            type: "POST",
@@ -98,12 +127,17 @@ function ajax(url,request,callback){
            error: function(data){
                console.log(data);
            }
-       });
+       }); 
+    }else{
+        showWarning('Warning','Connection Problem');
+    }
+       
    // });
 }
 
 function ajaxWithHeader(url,request,token,callback){
    // Pace.track(function(){
+    if (Offline.state == 'up') {
        $.ajax({
            url: url,
            headers: {"token" : token},
@@ -117,14 +151,14 @@ function ajaxWithHeader(url,request,token,callback){
                console.log(data);
            }
        });
+    } else {
+        showWarning('Warning', 'Connection Problem');
+    }
    // });
 }
- 
-// var api ="http://localhost:8000/api/";
+  
 var api ="http://localhost:8010/api/";
-var url ="http://localhost:8080/apps/foodasia-web/"; 
-// var api ="http://119.93.132.226:8000/api/";
-// var url ="http://foodasia-group.com/"; 
+var url ="http://localhost:8080/apps/fa-web/";  
 
 // Cookies
 function getCookie(name){

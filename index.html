@@ -18,6 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="dist/fonts/stylesheet.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 	<link rel="icon" type="image/png" href="assets/favico.png">
+	<link rel="stylesheet" href="dist/css/offline.css">
+	<link rel="stylesheet" href="dist/css/offline-language-english.css">
+	
 	<style>
 		body{
 			background-color: #383838;
@@ -36,7 +39,7 @@
 		}
 	</style>
 </head>
-<body>
+<body> 
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
@@ -183,10 +186,10 @@
 								<small class="text-danger" id="userError"></small>	
 							</div>
 							<div class="input-group mb-3">
-							  	<input type="password" class="form-control rounded-0 border-right-0 gothic" id="password" name="pass" placeholder="Password">
-							  		<div class="input-group-append">
-							    		<button class="btn btn-link fa-red rounded-0 border-left-0 border-default" type="button">Forgot?</button>
-							  		</div>
+								<input type="password" class="form-control rounded-0 border-right-0 gothic" id="password" name="pass" placeholder="Password">
+									<div class="input-group-append">
+										<button class="btn btn-link fa-red rounded-0 border-left-0 border-default" type="button">Forgot?</button>
+									</div>
 							</div>
 						</div>
 					</form>
@@ -197,24 +200,25 @@
 		</div>
 	</div>
 </div>
-	<img src="assets/fa-bg.png" class="img img-fluid" style="max-height: 80%; position: absolute; bottom:0; right: 0; z-index: -1;">
-	<footer class="footer">
-		<div class="container-fluid mx-auto" align="center">
-			<span class="fa-red">&copy; FoodAsia Corporation</span>
-		</div>
-	</footer>
-
-
+<img src="assets/fa-bg.png" class="img img-fluid" style="max-height: 80%; position: absolute; bottom:0; right: 0; z-index: -1;">
+<footer class="footer">
+	<div class="container-fluid mx-auto" align="center">
+		<span class="fa-red">&copy; FoodAsia Corporation</span>
+	</div>
+</footer> 
 
 <script type="text/javascript" src="dist/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="dist/js/idle.js"></script>
 <script type="text/javascript" src="dist/js/popper.min.js"></script>
-<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="dist/js/functions.js"></script>
-<script type="text/javascript" src="dist/js/fa.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script> 
 <script type="text/javascript" src="dist/js/pace.js"></script>
 <script type="text/javascript" src="dist/js/bootbox.min.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap-notify.js"></script>
+
+<script src="dist/js/offline.min.js"></script>
+<script type="text/javascript" src="dist/js/functions.js"></script>  
+<script type="text/javascript" src="dist/js/fa.js"></script>
+
 
 <!-- MAILCHIMP -->
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
