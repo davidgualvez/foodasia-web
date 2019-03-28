@@ -157,8 +157,8 @@ function ajaxWithHeader(url,request,token,callback){
    // });
 }
     
-var api ="http://localhost:8010/api/";
-var url ="http://localhost:8080/apps/fa-web/";
+var api ="http://localhost:8001/api/";
+var url ="http://foodasia-web.beta/";
 // var api = "http://119.93.132.226:8000/api/";
 // var url = "http://foodasia-group.com/";
 
