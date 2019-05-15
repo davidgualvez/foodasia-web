@@ -159,10 +159,6 @@ function ajaxWithHeader(url,request,token,callback){
     
 var api ="http://172.16.12.130:8001/api/";
 var url ="http://172.16.12.130:8002/";
-// var api = "http://119.93.132.226:8000/api/";
-// var url = "http://foodasia-group.com/";
-
-
 
 
 // Cookies
